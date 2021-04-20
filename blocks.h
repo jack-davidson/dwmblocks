@@ -1,5 +1,5 @@
 //#define DT0
-#define LT0
+//#define LT0
 
 #ifdef LT0
 #define ALSA_VOLUME_COMMAND "amixer get Master | awk -F'[][]' 'END{ print $2 }'"
