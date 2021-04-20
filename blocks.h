@@ -7,6 +7,10 @@ static const Block blocks[] = {
 #ifdef DT0
 	{" vol: ", "amixer -c 2 get PCM | awk -F'[][]' 'END{ print $2 }'",	1,		0},
 #endif
+#ifdef LT0
+	{" vol: ", "amixer get Master | awk -F'[][]' 'END{ print $2 }'",	1,		0},
+	{" bat: ", "echo $cat /sys/class/power_cupply/BAT0/capacity)%, $(cat/sys/class/power_supply/BAT1/capacity)%", 30, 0},
+#endif
 	{"mem: ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
 	{"", "date '+%b %d (%a) %I:%M %p '",					5,		0}
 };
