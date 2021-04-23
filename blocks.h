@@ -1,5 +1,5 @@
 //#define DT0
-//#define LT0
+#define LT0
 
 #ifdef LT0
 #define ALSA_VOLUME_COMMAND "amixer get Master | awk -F'[][]' 'END{ print $2 }'"
@@ -14,7 +14,7 @@ static const Block blocks[] = {
 	/* Icon */ /*Command*/						/*Update Interval*/	/*Update Signal*/
 	{" vol: ", ALSA_VOLUME_COMMAND,						1,		0},
 #ifdef LT0
-	{" bat: ", "echo $cat /sys/class/power_cupply/BAT0/capacity)%, $(cat/sys/class/power_supply/BAT1/capacity)%", 30, 0},
+	{" bat: ", "echo $(cat /sys/class/power_supply/BAT0/capacity)%, $(cat /sys/class/power_supply/BAT1/capacity)%", 30, 0},
 #endif
 	{"mem: ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
 	{"", "date '+%b %d (%a) %I:%M %p '",					5,		0}
