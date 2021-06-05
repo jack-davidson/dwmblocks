@@ -16,7 +16,7 @@ static const Block blocks[] = {
 #ifdef LT0
 	{" bat: ", "echo $(cat /sys/class/power_supply/BAT0/capacity)%, $(cat /sys/class/power_supply/BAT1/capacity)%", 30, 0},
 #endif
-	{"mem: ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	1,		0},
+	{"mem: ", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
 	{"", "date '+%b %d (%a) %I:%M %p '",					5,		0}
 };
 
