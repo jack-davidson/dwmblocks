@@ -12,7 +12,7 @@
 /* Modify this file to change what commands output to your statusbar, and recompile using the make command. */
 static const Block blocks[] = {
 	/* Icon */ /*Command*/						/*Update Interval*/	/*Update Signal*/
-	{" 墳: ", "amixer get " ALSA_DEVICE " | awk -F'[][]' 'END{ print $2 }'",						1,		0},
+	{" ", "vol " ALSA_DEVICE,						1,		0},
 #ifdef LT0
 	{" : ", "echo $(cat /sys/class/power_supply/BAT0/capacity)%, $(cat /sys/class/power_supply/BAT1/capacity)%", 30, 0},
 #endif
