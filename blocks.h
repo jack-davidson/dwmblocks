@@ -1,5 +1,5 @@
-//#define DT0
-#define LT0
+/* #define DT0 */
+/* #define LT0 */
 
 #ifdef LT0
 #define ALSA_VOLUME_COMMAND "amixer get Master | awk -F'[][]' 'END{ print $2 }'"
@@ -9,7 +9,7 @@
 #define ALSA_VOLUME_COMMAND "amixer get PCM | awk -F'[][]' 'END{ print $2 }'"
 #endif
 
-//Modify this file to change what commands output to your statusbar, and recompile using the make command.
+/* Modify this file to change what commands output to your statusbar, and recompile using the make command. */
 static const Block blocks[] = {
 	/* Icon */ /*Command*/						/*Update Interval*/	/*Update Signal*/
 	{" vol: ", ALSA_VOLUME_COMMAND,						1,		0},
@@ -20,6 +20,6 @@ static const Block blocks[] = {
 	{"", "date '+%b %d (%a) %I:%M %p '",					5,		0}
 };
 
-//sets delimeter between status commands. NULL character ('\0') means no delimeter.
+/* sets delimeter between status commands. NULL character ('\0') means no delimeter. */
 static char delim[] = " | ";
 static unsigned int delimLen = 5;
