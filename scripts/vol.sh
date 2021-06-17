@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 alsadev=${1}
 
@@ -6,9 +6,9 @@ alsadev=${1}
 
 volume=$(amixer get ${alsadev} | awk -F'[][]' 'END{ print $2 }' | sed 's/%//g')
 
-if [ ${volume} -gt 60 ]; then
+if [ ${volume} -gt 66 ]; then
     icon="墳"
-elif [ ${volume} -gt 20 ]; then
+elif [ ${volume} -gt 33 ]; then
     icon="奔"
 elif [ ${volume} -gt 0 ]; then
     icon="奄"
