@@ -16,4 +16,4 @@ elif [ ${volume} -eq 0 ]; then
     icon="婢"
 fi
 
-echo "${icon}: ${volume}%"
+echo "${icon} ${volume}%"

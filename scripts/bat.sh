@@ -15,4 +15,4 @@ elif [ ${level} -gt 0 ]; then
     icon=" "
 fi
 
-echo "${icon}: ${level}%"
+echo "${icon} ${level}%"

@@ -14,7 +14,7 @@ static const Block blocks[] = {
 #ifdef lt0
 	{"",		SCRIPT("bat.sh"),						30,			0},
 #endif
-	{" : ",	"free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,			0},
+	{"  ",	"free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,			0},
 	{"",		SCRIPT("date.sh"),						5,			0}
 };
 

@@ -28,4 +28,4 @@ elif [ ${hour} -eq 12 ]; then
     icon=""
 fi
 
-echo "${icon}: $(date '+%a %b %d %I:%M %p ')"
+echo "${icon} $(date '+%a %b %d %I:%M %p ')"
