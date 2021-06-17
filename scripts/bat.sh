@@ -11,7 +11,7 @@ elif [ ${level} -gt 50 ]; then
     icon=" "
 elif [ ${level} -gt 25 ]; then
     icon=" "
-elif [ ${level} -eq 0 ]; then
+elif [ ${level} -gt 0 ]; then
     icon=" "
 fi
 
