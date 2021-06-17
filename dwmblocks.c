@@ -125,10 +125,14 @@ int getstatus(char *str, char *last)
 #ifndef NO_X
 void setroot()
 {
+	char *tmp = calloc(sizeof(statusstr[0]) + 1, 1);
+	strcat(tmp, " ");
 	if (!getstatus(statusstr[0], statusstr[1]))//Only set root if text has changed.
 		return;
-	XStoreName(dpy, root, statusstr[0]);
+	strcat(tmp, statusstr[0]);
+	XStoreName(dpy, root, tmp);
 	XFlush(dpy);
+	free(tmp);
 }
 
 int setupX()
