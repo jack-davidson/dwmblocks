@@ -10,7 +10,7 @@
 static const Block blocks[] = {
 	/* Icon */ 	/*Command*/							/*Update Interval*/	/*Update Signal*/
 	{" ",		SCRIPT("vol.sh " ALSA_DEVICE),					1,			0},
-	{"",		SCRIPT("mpd.sh"),						5,			0},
+	{"",		SCRIPT("mpd.sh"),						1,			0},
 #ifdef lt0
 	{"",		SCRIPT("bat.sh"),						30,			0},
 #endif
