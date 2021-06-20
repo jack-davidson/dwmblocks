@@ -4,9 +4,13 @@ alsadev=${1}
 
 [ -z ${1} ] && echo 'argument required'
 
-volume=$(amixer get ${alsadev} | awk -F'[][]' 'END{ print $2 }' | sed 's/%//g')
+output=$(amixer get ${alsadev})
 
-if [ ${volume} -gt 66 ]; then
+volume=$(echo "${output}" | awk -F'[][]' 'END{ print $2 }' | sed 's/%//g')
+
+if [ "$(echo "${output}" | sed '5!d' | tr -s ' ' | cut -d' ' -f7)" = '[off]' ]; then
+    icon="婢"
+elif [ ${volume} -gt 66 ]; then
     icon="墳"
 elif [ ${volume} -gt 33 ]; then
     icon="奔"
