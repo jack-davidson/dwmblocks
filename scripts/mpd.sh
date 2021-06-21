@@ -1,7 +1,14 @@
 #!/bin/sh
 
-current=$(mpc current)
-[ -z "${current}" ] && current="idle"
-time="($(mpc | sed "2!d" | tr -s ' ' | cut -d' ' -f3))"
-[ "${time}" = "()" ] && time=""
-echo "ﱘ  ${current} ${time}"
+icon="ﱘ"
+status=$(mpc current)
+time=$(mpc | sed "2!d" | tr -s ' ' | cut -d' ' -f3)
+
+if [ -z "${status}" ]; then
+    icon="ﱙ"
+    status="${icon} idle"
+fi
+
+[ -z "${time}" ] || status="${icon} ${status} (${time})"
+
+echo "${status}"
