@@ -6,7 +6,7 @@ time=$(mpc | sed "2!d" | tr -s ' ' | cut -d' ' -f3)
 
 if [ -z "${status}" ]; then
     icon="ﱙ"
-    status="${icon} idle"
+    status="${icon}"
 fi
 
 [ -z "${time}" ] || status="${icon} ${status} (${time})"

@@ -9,8 +9,7 @@ ssid="$(iwctl station ${interface} show | sed '7!d' |
     tr -s ' ' | sed "s/[ \t]*$//" | cut -d' ' -f4-)"
 
 if [ -z "${interface}" ]; then
-    icon="ﲁ "
-    status="${icon}n/a"
+    status="ﲁ "
 elif [ -z "${ssid}" ]; then
     icon="ﲁ "
     status="${icon}${interface}: disconnected"
