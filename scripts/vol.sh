@@ -10,9 +10,9 @@ volume=$(echo "${output}" | awk -F'[][]' 'END{ print $2 }' | sed 's/%//g')
 
 if [ "$(echo "${output}" | sed '5!d' | tr -s ' ' | cut -d' ' -f7)" = '[off]' ]; then
     icon="婢"
-elif [ ${volume} -gt 66 ]; then
+elif [ ${volume} -gt 50 ]; then
     icon="墳"
-elif [ ${volume} -gt 33 ]; then
+elif [ ${volume} -gt 20 ]; then
     icon="奔"
 elif [ ${volume} -gt 0 ]; then
     icon="奄"
