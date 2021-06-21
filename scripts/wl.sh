@@ -1,13 +1,21 @@
 #!/bin/sh
 
+icon="說"
+
 interface="$(iwctl station list | grep ".*connected" |
     tr -s ' ' | cut -d' ' -f2)"
-
 
 ssid="$(iwctl station ${interface} show | sed '7!d' |
     tr -s ' ' | sed "s/[ \t]*$//" | cut -d' ' -f4-)"
 
-[ -z "${interface}" ] && echo "泌 n/a" && exit
-[ -z "${ssid}" ] && echo "泌 ${interface}: disconnected"
+if [ -z "${interface}" ]; then
+    icon="ﲁ "
+    status="${icon}n/a"
+elif [ -z "${ssid}" ]; then
+    icon="ﲁ "
+    status="${icon}${interface}: disconnected"
+else
+    status="${icon} ${interface}: \"${ssid}\""
+fi
 
-echo "泌 ${interface}: \"${ssid}\""
+echo "${status}"
