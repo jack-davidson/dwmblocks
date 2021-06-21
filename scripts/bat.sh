@@ -37,6 +37,6 @@ fi
 
 icon=$(get_level_icon ${avg} "  " "  " "  " "  " "  ")
 
-[ -z "${status}" ] && status="${icon} ${avg}%"
+[ -z "${status}" ] && status="${icon}  ${avg}%"
 
 echo "${status}"
