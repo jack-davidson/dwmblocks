@@ -6,7 +6,7 @@
 BAT0=$(cat /sys/class/power_supply/BAT0/capacity)
 BAT1=$(cat /sys/class/power_supply/BAT1/capacity)
 
-level=$(((${BAT0} + ${BAT1}) / 2))
+avg=$(((${BAT0} + ${BAT1}) / 2))
 status=""
 
 get_level_icon() {
@@ -35,8 +35,8 @@ if [ -e "/tmp/dwmblocks:bat:show_levels" ]; then
     status="${bat0_icon} ${BAT0}% ${bat1_icon} ${BAT1}%"
 fi
 
-icon=$(get_level_icon "  " "  " "  " "  " "  ")
+icon=$(get_level_icon ${avg} "  " "  " "  " "  " "  ")
 
-[ -z "${status}" ] && status="${icon} ${level}%"
+[ -z "${status}" ] && status="${icon} ${avg}%"
 
 echo "${status}"
