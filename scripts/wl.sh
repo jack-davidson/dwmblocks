@@ -14,7 +14,7 @@ elif [ -z "${ssid}" ]; then
     icon="ﲁ "
     status="${icon}${interface}: disconnected"
 else
-    status="${icon} ${interface}: \"${ssid}\""
+    status="${icon} ${interface}: <${ssid}>"
 fi
 
 echo "${status}"
