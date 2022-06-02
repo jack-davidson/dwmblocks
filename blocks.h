@@ -8,9 +8,8 @@
 
 /* Modify this file to change what commands output to your statusbar, and recompile using the make command. */
 static const Block blocks[] = {
-	/* Script */							/*Update Interval*/	/*Update Signal*/
+	/* Script */			/*Update Interval*/	/*Update Signal*/
 	{SCRIPT("vol.sh " ALSA_DEVICE),	1,			0},
-	{SCRIPT("mpd.sh"),		1,			0},
 #ifdef lt0
 	{SCRIPT("wl.sh"),		1,			0},
 	{SCRIPT("bat.sh"),		1,			0},
