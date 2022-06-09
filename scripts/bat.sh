@@ -5,6 +5,7 @@
 
 BAT0=$(cat /sys/class/power_supply/BAT0/capacity)
 BAT1=$(cat /sys/class/power_supply/BAT1/capacity)
+charging=$([ "$(cat /sys/class/power_supply/AC/online)" = "1" ] && echo "⚡ " || echo "")
 
 avg=$(((${BAT0} + ${BAT1}) / 2))
 status=""
@@ -39,4 +40,4 @@ icon=$(get_level_icon ${avg} "  " "  " "  " "  " "  ")
 
 [ -z "${status}" ] && status="${icon}  ${avg}%"
 
-echo "${status}"
+echo "${charging}${status}"
