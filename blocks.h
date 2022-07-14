@@ -6,6 +6,10 @@
 #define ALSA_DEVICE "PCM"
 #endif
 
+#ifndef SCRIPT
+#define SCRIPT
+#endif
+
 /* Modify this file to change what commands output to your statusbar, and recompile using the make command. */
 static const Block blocks[] = {
 	/* Script */			/*Update Interval*/	/*Update Signal*/
