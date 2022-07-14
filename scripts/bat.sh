@@ -1,15 +1,5 @@
 #!/bin/sh
 
-# `touch /tmp/dwmblocks:bat:show_levels` to show individual battery levels
-# `rm /tmp/dwmblocks:bat:show_levels` to show average battery levels
-
-BAT0=$(cat /sys/class/power_supply/BAT0/capacity)
-BAT1=$(cat /sys/class/power_supply/BAT1/capacity)
-charging=$([ "$(cat /sys/class/power_supply/AC/online)" = "1" ] && echo "⚡ " || echo "")
-
-avg=$(((${BAT0} + ${BAT1}) / 2))
-status=""
-
 get_level_icon() {
     level=${1}
     full=${2}
@@ -30,14 +20,18 @@ get_level_icon() {
     fi
 }
 
-if [ -e "/tmp/dwmblocks:bat:show_levels" ]; then
-    bat0_icon=$(get_level_icon ${BAT0} "" "" "" "" "")
-    bat1_icon=$(get_level_icon ${BAT1} "" "" "" "" "")
-    status="${bat0_icon} ${BAT0}% ${bat1_icon} ${BAT1}%"
-fi
+count=0 # battery count
+sum=0 # sum of battery levels
+
+for battery in /sys/class/power_supply/BAT*; do
+    count=$((count+1))
+    sum=$((sum+$(cat ${battery}/capacity)))
+done
+
+# average battery level
+avg=$((sum/count))
 
 icon=$(get_level_icon ${avg} "  " "  " "  " "  " "  ")
+charging=$([ "$(cat /sys/class/power_supply/AC/online)" = "1" ] && echo "⚡ " || echo "")
 
-[ -z "${status}" ] && status="${icon}  ${avg}%"
-
-echo "${charging}${status}"
+echo "${charging}${icon}  ${avg}%"
