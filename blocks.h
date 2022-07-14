@@ -1,3 +1,5 @@
+#define ALSA_DEVICE "Master"
+
 #ifdef lt0
 #define ALSA_DEVICE "Master"
 #endif
