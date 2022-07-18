@@ -2,12 +2,16 @@
 
 brightness=$(xbacklight | xargs printf "%.*f\n" "$p")
 
-if [ "$brightness" -gt 66 ]; then
-    icon=" "
-elif [ "$brightness" -gt 33 ]; then
-    icon=""
+if [ "$brightness" -eq 100 ]; then
+    icon=" "
+elif [ "$brightness" -gt 80 ]; then
+    icon="  "
+elif [ "$brightness" -gt 40 ]; then
+    icon="  "
+elif [ "$brightness" -gt 20 ]; then
+    icon="  "
 else
-    icon=""
+    icon=" "
 fi
 
-echo "$icon $brightness"
+echo "$icon$brightness%"

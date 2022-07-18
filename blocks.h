@@ -16,7 +16,7 @@
 static const Block blocks[] = {
 	/* Script */			/*Update Interval*/	/*Update Signal*/
 	{SCRIPT("vol.sh " ALSA_DEVICE),	1,			0},
-	{SCRIPT("brightness.sh"),	1,			0},
+	{SCRIPT("backlight.sh"),	1,			0},
 #ifdef lt0
 	{SCRIPT("wl.sh"),		10,			0},
 	{SCRIPT("bat.sh"),		60,			0},
