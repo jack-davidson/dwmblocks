@@ -20,7 +20,7 @@ static const Block blocks[] = {
 	{SCRIPT("vol.sh " ALSA_DEVICE),	1,			0},
 	{SCRIPT("backlight.sh"),	1,			0},
 #ifdef iwd
-	{SCRIPT("wl.sh"),		10,			0},
+	{SCRIPT("iwd.sh"),		10,			0},
 #endif
 #ifdef battery
 	{SCRIPT("bat.sh"),		60,			0},
