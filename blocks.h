@@ -2,6 +2,8 @@
 
 #ifdef lt0
 #define ALSA_DEVICE "Master"
+#define iwd
+#define battery
 #endif
 
 #ifdef dt0
@@ -17,8 +19,10 @@ static const Block blocks[] = {
 	/* Script */			/*Update Interval*/	/*Update Signal*/
 	{SCRIPT("vol.sh " ALSA_DEVICE),	1,			0},
 	{SCRIPT("backlight.sh"),	1,			0},
-#ifdef lt0
+#ifdef iwd
 	{SCRIPT("wl.sh"),		10,			0},
+#endif
+#ifdef battery
 	{SCRIPT("bat.sh"),		60,			0},
 #endif
 	{SCRIPT("mem.sh"),		10,			0},
@@ -26,5 +30,5 @@ static const Block blocks[] = {
 };
 
 /* sets delimeter between status commands. NULL character ('\0') means no delimeter. */
-static char delim[] = " | ";
-static unsigned int delimLen = 5;
+static char delim[] = "   ";
+static unsigned int delimLen = 3;
