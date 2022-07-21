@@ -1,4 +1,7 @@
 #!/bin/sh
+# Display (average) battery level(s) with icon
+# Supports machines with multiple batteries.
+# Depends on sysfs (builtin on most systems)
 
 get_level_icon() {
     level=${1}

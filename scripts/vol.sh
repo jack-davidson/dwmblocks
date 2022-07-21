@@ -1,4 +1,6 @@
 #!/bin/sh
+# Get alsa volume of an alsa device.
+# depends on alsa/amixer
 
 alsadev=${1}
 

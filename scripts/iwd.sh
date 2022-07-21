@@ -1,4 +1,6 @@
 #!/bin/sh
+# Get connected SSID/interface from iwd.
+# Depends on iwd/iwctl.
 
 icon="說"
 

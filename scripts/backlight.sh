@@ -1,4 +1,6 @@
 #!/bin/sh
+# Get X11 backlight with icon.
+# Depends on xbacklight(1) for getting the display's backlight.
 
 brightness=$(xbacklight | xargs printf "%.*f\n" "$p")
 

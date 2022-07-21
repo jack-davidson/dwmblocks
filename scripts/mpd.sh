@@ -1,4 +1,6 @@
 #!/bin/sh
+# Get current song/time with mpd.
+# Depends on mpd and mpc.
 
 icon="ﱘ"
 status=$(mpc current)
