@@ -17,8 +17,8 @@
 /* Modify this file to change what commands output to your statusbar, and recompile using the make command. */
 static const Block blocks[] = {
 	/* Script */			/*Update Interval*/	/*Update Signal*/
-	{SCRIPT("vol.sh " ALSA_DEVICE),	1,			0},
-	{SCRIPT("backlight.sh"),	1,			0},
+	{SCRIPT("vol.sh " ALSA_DEVICE),	1,			44},
+	{SCRIPT("backlight.sh"),	1,			45},
 #ifdef iwd
 	{SCRIPT("iwd.sh"),		10,			0},
 #endif
