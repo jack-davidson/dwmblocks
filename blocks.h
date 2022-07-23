@@ -4,6 +4,7 @@
 #define ALSA_DEVICE "Master"
 #define iwd
 #define battery
+#define wireless
 #endif
 
 #ifdef dt0
@@ -21,6 +22,9 @@ static const Block blocks[] = {
 	{SCRIPT("backlight.sh"),	1,			45},
 #ifdef iwd
 	{SCRIPT("iwd.sh"),		10,			0},
+#endif
+#ifdef wireless
+	{SCRIPT("airplane.sh"),		1,			0},
 #endif
 #ifdef battery
 	{SCRIPT("bat.sh"),		60,			0},
