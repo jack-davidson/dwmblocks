@@ -4,7 +4,6 @@
 #define ALSA_DEVICE "Master"
 #define iwd
 #define battery
-#define wireless
 #endif
 
 #ifdef dt0
@@ -20,9 +19,6 @@ static const Block blocks[] = {
 	/* Script */			/*Update Interval*/	/*Update Signal*/
 	{SCRIPT("vol.sh " ALSA_DEVICE),	1,			44},
 	{SCRIPT("backlight.sh"),	1,			45},
-#ifdef wireless
-	{SCRIPT("airplane.sh"),		1,			0},
-#endif
 #ifdef iwd
 	{SCRIPT("iwd.sh"),		10,			0},
 #endif

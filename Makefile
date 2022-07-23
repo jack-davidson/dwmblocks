@@ -1,9 +1,10 @@
 PREFIX ?= /usr/local
 CC ?= cc
 LDFLAGS = -lX11
+CPPFLAGS = -D$(shell cat /etc/hostname) -DSCRIPT'(s)="\"$(shell pwd)/scripts/\""s'
 
 output: dwmblocks.c blocks.def.h blocks.h
-	${CC} dwmblocks.c $(LDFLAGS) -o dwmblocks -D$(shell cat /etc/hostname) -DSCRIPT'(s)="\"$(shell pwd)/scripts/\""s'
+	${CC} dwmblocks.c $(LDFLAGS) -o dwmblocks $(CPPFLAGS)
 blocks.h:
 	cp blocks.def.h $@
 
