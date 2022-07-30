@@ -7,6 +7,7 @@
 #endif
 
 #ifdef dt0
+#undef ALSA_DEVICE
 #define ALSA_DEVICE "PCM"
 #endif
 
