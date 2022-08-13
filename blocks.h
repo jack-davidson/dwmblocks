@@ -4,6 +4,7 @@
 #define ALSA_DEVICE "Master"
 #define iwd
 #define battery
+#define backlight
 #endif
 
 #ifdef dt0
@@ -19,7 +20,9 @@
 static const Block blocks[] = {
 	/* Script */			/*Update Interval*/	/*Update Signal*/
 	{SCRIPT("vol.sh " ALSA_DEVICE),	1,			44},
+#ifdef backlight
 	{SCRIPT("backlight.sh"),	1,			45},
+#endif
 #ifdef iwd
 	{SCRIPT("iwd.sh"),		10,			0},
 #endif
