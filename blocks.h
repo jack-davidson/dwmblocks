@@ -26,6 +26,7 @@ static const Block blocks[] = {
 	{SCRIPT("bat.sh"),		60,			0},
 #endif
 	{SCRIPT("mem.sh"),		10,			0},
+	{SCRIPT("period.sh"),		10,			0},
 	{SCRIPT("date.sh"),		1,			0}
 };
 
