@@ -27,7 +27,7 @@ static const Block blocks[] = {
 	{SCRIPT("iwd.sh"),		10,			0},
 #endif
 #ifdef battery
-	{SCRIPT("bat.sh"),		60,			0},
+	{SCRIPT("bat.sh"),		5,			0},
 #endif
 	{SCRIPT("mem.sh"),		10,			0},
 	{SCRIPT("date.sh"),		1,			0}
